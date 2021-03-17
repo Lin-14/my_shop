@@ -135,7 +135,7 @@ export default {
   }
 
   .el-main{
-    background-color: rgb(240, 242, 245);
+    background-image: linear-gradient(#fff, #87CEEB) ;
   }
 
   .iconfont{
