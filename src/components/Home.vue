@@ -74,10 +74,11 @@ export default {
   created(){
     this.getMenuList(),
     // this.activePath = window.sessionStorage.getItem('activePath');
-    this.activePath = this.$route.path;
+    //解决高亮问题
+    this.activePath = this.$route.path == '/goods/add' ? '/goods':this.$route.path;
   },
   updated() {
-    this.activePath = this.$route.path;
+    this.activePath = this.$route.path == '/goods/add' ? '/goods':this.$route.path;
   },
   methods: {
     logout(){

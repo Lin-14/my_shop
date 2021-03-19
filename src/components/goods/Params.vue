@@ -346,7 +346,9 @@ export default {
   .el-tag{
     margin: 5px;
   }
-
+  .el-tabs{
+    margin-top: 10px;
+  }
   .input-new-tag {
     width: 120px;
     margin-left: 10px;
