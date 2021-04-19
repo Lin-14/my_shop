@@ -41,6 +41,7 @@ const router = new VueRouter({
   routes
 })
 
+//全局前置守卫
 router.beforeEach((to, from, next) => {
   if(to.path === '/login') return next()
   const tokenStr = window.sessionStorage.getItem('token')
