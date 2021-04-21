@@ -21,7 +21,7 @@ export default {
     letter-spacing: 18px;
   }
   div{
-    padding: 280px 0;
+    padding: 250px 0;
     text-align: center;
   }
 </style>

@@ -38,7 +38,8 @@
             {{scope.row.add_time | dateFormat}}
           </template>
         </el-table-column>
-        <el-table-column label="操作" width = "120px" v-slot="scope">
+        <el-table-column label="操作" width = "180px" v-slot="scope">
+          <el-button @click = "getGoodDetail(scope.row.goods_id)" type = "primary" icon = "el-icon-search" size = "mini">图片</el-button>
           <el-button @click = "deleteGoodsById(scope.row.goods_id)" type = "danger" icon = "el-icon-delete" size = "mini">删除</el-button>
         </el-table-column>
       </el-table>
@@ -53,11 +54,18 @@
         :total = "total">
       </el-pagination>
     </el-card>
+    <el-image-viewer
+      v-if="showViewer"
+      :on-close="()=>{showViewer=false}"
+      :url-list="imgList"
+      />
   </div>
 </template>
 
 <script>
+import ElImageViewer from 'element-ui/packages/image/src/image-viewer'
 export default {
+  components:{ElImageViewer},
   data(){
     return {
       queryInfo: {
@@ -68,7 +76,10 @@ export default {
         pagesize: 8
       },
       goodslist: [],
-      total: 0
+      total: 0,
+      goodId: null,
+      showViewer: false,
+      imgList: []
     }
   },
   created() {
@@ -83,6 +94,22 @@ export default {
         this.goodslist = res.data.goods
         this.total = res.data.total
       }
+    },
+    //test获取商品图片
+    async getGoodDetail(id) {
+      this.goodId = id
+      const { data: res } = await this.$http.get('goods/' + this.goodId)
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取数据失败')
+      } else {
+        let picsList = []
+        for(let item of res.data.pics){
+          picsList.push(item.pics_big)
+        }
+        this.imgList = picsList
+        console.log(this.goodId);
+      }
+      this.showViewer = true
     },
     handleSizeChange(newSize){
       this.queryInfo.pagesize = newSize

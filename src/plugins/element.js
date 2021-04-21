@@ -5,7 +5,7 @@ import {
   Breadcrumb, BreadcrumbItem, Card, Col, Row, Table, 
   TableColumn, Switch, Tooltip, Pagination, Dialog, MessageBox, 
   Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, 
-  Steps, Step, CheckboxGroup, Checkbox, Upload, Timeline, TimelineItem
+  Steps, Step, CheckboxGroup, Checkbox, Upload, Timeline, TimelineItem, Image
 } from 'element-ui'
 
 Vue.use(Button)
@@ -47,3 +47,4 @@ Vue.use(Checkbox)
 Vue.use(Upload)
 Vue.use(Timeline)
 Vue.use(TimelineItem)
+Vue.use(Image)
