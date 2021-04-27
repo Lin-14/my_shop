@@ -42,6 +42,7 @@
         <div class = "toggle-button" @click = "toggleCollapse">
           <span :class = "isCollapse?'el-icon-s-unfold':'el-icon-s-fold'"></span>
         </div>
+        <span class="fr">欢迎使用！</span>
         <el-button type="danger" @click = "logout">退出</el-button>
       </el-header>
       <!-- 主页面区域 -->
@@ -109,6 +110,12 @@ export default {
     display: flex;
     align-items: center;
     font-size: 20px;
+    .fr{
+      color: #606266;
+      font-size: 16px;
+      position: absolute;
+      right: 100px;
+    }
     .el-button {
     position: absolute;
     right: 20px;
@@ -146,5 +153,8 @@ export default {
   .toggle-button{
     cursor: pointer;
     color: #666;
+  }
+  span[class^="el-icon-s-"]:hover{
+    color: #409EFF;
   }
 </style>
