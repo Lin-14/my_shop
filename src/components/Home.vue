@@ -3,7 +3,7 @@
     <!-- 侧边栏区域 -->
     <el-aside :width="isCollapse?'64px':'220px'">
       <el-header>
-        <img src="../assets/logo-s.png" alt="">
+        <img src="../assets/images/logo-s.png" alt="">
         <span v-show = "!isCollapse">后台管理系统</span>
       </el-header>
       <!-- 导航区域 -->

@@ -12,9 +12,10 @@
       <el-row :gutter = "20">
         <el-col :span = "8">
           <el-input 
-            placeholder="请输入内容" 
+            placeholder="请输入用户名称" 
             v-model = "queryInfo.query"
             clearable
+            @keydown.enter.native = "getUserList"
             @clear = "getUserList"
             >
             <el-button 

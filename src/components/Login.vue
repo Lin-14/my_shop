@@ -2,7 +2,7 @@
   <div class="login_container">
     <div class="login_box">
       <div class="avator_box">
-          <img src="../assets/rukawa.png" alt="">
+          <img src="../assets/images/rukawa.png" alt="">
       </div>
       <!-- 登录表单 -->
       <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form">
@@ -71,8 +71,10 @@ export default {
 
 <style lang="less" scoped>
   .login_container{
-    background-color: #5dbe8a;
+    background: url(../assets/images/bgimg.jpg) no-repeat;
     height: 100%;
+    width: 100%;
+    background-size: 100%;
   }
   .login_box{
     width: 450px;

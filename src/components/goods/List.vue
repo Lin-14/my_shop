@@ -13,6 +13,7 @@
             placeholder="请输入内容" 
             v-model = "queryInfo.query"
             clearable
+            @keydown.enter.native = "getGoodsList"
             @clear = "getGoodsList"
             >
             <el-button 
